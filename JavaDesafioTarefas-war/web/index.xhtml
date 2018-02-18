@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <h:outputStylesheet name="/css/default.css"/>
+        <h:outputStylesheet name="/css/bootstrap.css"/>
+        <title>Desafio Java</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link rel="stylesheet" type="text/css" href="/Tarefas-war/faces/jsfcrud.css" />
+    </h:head>
+    <h:body>
+        <ui:composition template="baseTemplate.xhtml">
+            <ui:define name="nav">
+                <h:link outcome="/index" value="#{bundle.NavIndex}"/>
+                <h:link outcome="/tarefa/List" value="#{bundle.NavListTarefa}"/>
+            </ui:define>
+
+            <ui:define name="main">
+                <h2>Tarefa:</h2>
+                <p>Implementar uma tasklist utilizando 
+                    Java/MySQL.</p>
+
+                    <h2>Requisitos:</h2>
+                    <p>O usuário deve poder:</p>
+                    <ul>
+                        <li>Adicionar novas tarefas;</li>
+                        <li>Marcar e desmarcar o status de concluído;</li>
+                        <li>Editar o conteúdo da task;</li>
+                        <li>Deletar uma task;</li>
+                        <li>Versionamento com Git;</li>
+                    </ul>
+                <p>Obs.: uma task deve conter ao menos: título 
+                    e status, podendo conter adicionalmente descrição, 
+                    datas de criação, edição, remoção e 
+                    conclusão.</p>
+
+                    <h2>Serão considerados diferenciais:</h2>
+                    <ul>
+                        <li>Camada de frontend independente do backend 
+                            (API REST + frontend);</li>
+                        <li>Utilização de frameworks ou bibliotecas de 
+                            frontend (ex: jQuery, Angular, Bootstrap);</li>
+                        <li>Utilização de JavaEE para o backend ex:(JSF, 
+                            Spring, EJB);</li>
+                        <li>Utilização de framework de persistência de 
+                            dados;</li>
+                        <li>Bons padrões de desenvolvimento e código limpo;</li>
+                        <li>Documentação no código;</li>
+                        <li>Estilização básica do frontend, responsividade e 
+                            usabilidade (drag’n’drop);</li>
+                    </ul>
+                    
+                    <br />
+                    <h:link outcome="/tarefa/List" value="Mostrar todos itens de Tarefa"/>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

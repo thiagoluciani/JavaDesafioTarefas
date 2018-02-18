@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <h:outputStylesheet name="/css/default.css"/>
+        <h:outputStylesheet name="/css/bootstrap.css"/>
+        <title>Desafio Java</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link rel="stylesheet" type="text/css" href="/Tarefas-war/faces/jsfcrud.css" />
+    </h:head>
+    <h:body>
+        <ui:composition template="/baseTemplate.xhtml">
+            <ui:define name="nav">
+                <h:link outcome="/index" value="#{bundle.NavIndex}"/>
+                <h:link outcome="/tarefa/List" value="#{bundle.NavListTarefa}"/>
+            </ui:define>
+
+            <ui:define name="main">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:form>
+                    <fieldset>
+                        <legend>Ver Tarefa</legend>
+                        <h:panelGrid columns="2">
+                            <h:outputText value="#{bundle.ViewTarefaLabel_titulo}"/>
+                            <h:outputText value="#{tarefaController.selected.titulo}" title="#{bundle.ViewTarefaTitle_titulo}"/>
+                            <h:outputText value="#{bundle.ViewTarefaLabel_status}"/>
+                            <h:selectBooleanCheckbox value="#{tarefaController.selected.status}" disabled="true" readonly="true" title="#{bundle.ViewTarefaTitle_status}"></h:selectBooleanCheckbox>
+                            <h:outputText value="#{bundle.ViewTarefaLabel_descricao}"/>
+                            <h:outputText value="#{tarefaController.selected.descricao}" title="#{bundle.ViewTarefaTitle_descricao}"/>
+                            <h:outputText value="#{bundle.ViewTarefaLabel_datacriacao}"/>
+                            <h:outputText value="#{tarefaController.selected.datacriacao}" title="#{bundle.ViewTarefaTitle_datacriacao}">
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:outputText>
+                            <h:outputText value="#{bundle.ViewTarefaLabel_dataedicao}"/>
+                            <h:outputText value="#{tarefaController.selected.dataedicao}" title="#{bundle.ViewTarefaTitle_dataedicao}">
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:outputText>
+                            <h:outputText value="#{bundle.ViewTarefaLabel_dataremocao}"/>
+                            <h:outputText value="#{tarefaController.selected.dataremocao}" title="#{bundle.ViewTarefaTitle_dataremocao}">
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:outputText>
+                            <h:outputText value="#{bundle.ViewTarefaLabel_dataconclusao}"/>
+                            <h:outputText value="#{tarefaController.selected.dataconclusao}" title="#{bundle.ViewTarefaTitle_dataconclusao}">
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:outputText>
+                        </h:panelGrid>
+                        <br />
+                        <h:commandLink action="#{tarefaController.destroyAndView}" value="#{bundle.ViewTarefaDestroyLink}"/>
+                        <br />
+                        <br />
+                        <h:link outcome="Edit" value="#{bundle.ViewTarefaEditLink}"/>
+                        <br />
+                        <h:commandLink action="#{tarefaController.prepareCreate}" value="#{bundle.ViewTarefaCreateLink}" />
+                        <br />
+                        <h:commandLink action="#{tarefaController.prepareList}" value="#{bundle.ViewTarefaShowAllLink}"/>
+                        <br />
+                        <br />
+                        <h:link outcome="/index" value="#{bundle.ViewTarefaIndexLink}"/>
+                    </fieldset>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
