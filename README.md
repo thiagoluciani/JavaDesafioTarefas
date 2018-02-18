@@ -6,19 +6,30 @@ Requisitos:
 O usuário deve poder:
 
 Adicionar novas tarefas; (Concluído)
+
 Marcar e desmarcar o status de concluído; (Concluído)
+
 Editar o conteúdo da task; (Concluído)
+
 Deletar uma task; (Concluído)
+
 Versionamento com Git; (Não Concluído. Apenas recentemente conheci o Git/GitHub, não sei como fazer este requesito)
+
 Obs.: uma task deve conter ao menos: título e status, podendo conter adicionalmente descrição, datas de criação, edição, remoção e conclusão. (Concluído, porém faltou implementar as regras de negócio para preenchimento automático das datas, etc.)
 
 Serão considerados diferenciais:
 Camada de frontend independente do backend (API REST + frontend); (Parcialmente concluído, feita a parte frontend utilizando JSF, porém não deu tempo para implementar um serviço backend REST com JaxRS)
+
 Utilização de frameworks ou bibliotecas de frontend (ex: jQuery, Angular, Bootstrap); (Não concluído, no momento ainda não tenho nenhum conhecimento em jQuery ou AngularJS, tenho um pouco em Bootstrap porém não houve tempo para implementar)
+
 Utilização de JavaEE para o backend ex:(JSF, Spring, EJB); (Concluído, implementação feita utilizando JSF, faltou implementar regras de negócio na camada dos EJBs)
+
 Utilização de framework de persistência de dados; (Concluído)
+
 Bons padrões de desenvolvimento e código limpo; (-)
+
 Documentação no código; (-)
+
 Estilização básica do frontend, responsividade e usabilidade (drag’n’drop); (-, Não houve tempo para estilizar a aplicação)
 
 Tentarei hospedar a aplicação em um dos dois domínios abaixo:
